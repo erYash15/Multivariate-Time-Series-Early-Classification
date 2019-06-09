@@ -5,24 +5,27 @@
 ### Description: 
 
 Project is divided into 3 sub-objectives:
+
 Objective 1: Discover the internal Characteristics of MTS (Multivariate Time-Series) data and enhance the interpretability of classification. EXTRACT FEATURE CANDIDATE of each variable.
+
 OBJECTIVE 2: MINE CORE FEATURES from the extracted features using GREEDY METHOD and SI CLUSTERING. Core feature is any shapelet extremely useful in classification.
+
 OBJECTIVE 3: EARLY CLASSIFICATION using RULE BASED METHOD and QBC METHOD.
 
 ### Table of Contents:
 
 Files associated with Objective 1:
 
-- [feature_extration.py]
+- [feature_extration.py](https://github.com/erYash15/Multivariate-Time-series-early-classification/blob/master/feature_extration.py)
 
 Files associated with Objective 2:
 
-- [feature_selection_greedy_1.py]
-- [feature_selection_greedy_2.py]
+- [feature_selection_greedy_1.py](https://github.com/erYash15/Multivariate-Time-series-early-classification/blob/master/feature_selection_greedy_1.py)
+- [feature_selection_greedy_2.py](https://github.com/erYash15/Multivariate-Time-series-early-classification/blob/master/feature_selection_greedy_2.py)
 
 Files associated with Objective 3:
 
-- [early_classification_MCFEC_QBC.py]
+- [early_classification_MCFEC_QBC.py](https://github.com/erYash15/Multivariate-Time-series-early-classification/blob/master/early_classification_MCFEC_QBC.py)
 
 ### Pre-requisites and Installation:
 This project requires **Python** and the following Python libraries installed:
