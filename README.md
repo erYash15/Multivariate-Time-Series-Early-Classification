@@ -8,9 +8,9 @@ Project is divided into 3 Sub-Objectives:
 
 _Objective 1_ - Discover the internal Characteristics of MTS (Multivariate Time-Series) data and enhance the interpretability of classification. **Extact Feature Candidate** of each variable.
 
-_OBJECTIVE 2_ - **Mine Core Features** from the extracted features using **Greedy Method** and **SI Clustering**. Core feature is any shapelet extremely useful in classification.
+_Objective 2_ - **Mine Core Features** from the extracted features using **Greedy Method** and **SI Clustering**. Core feature is any shapelet extremely useful in classification.
 
-_OBJECTIVE 3_ - **Early Classification** using **Rule Based Method** and **QBC Method**.
+_Objective 3_ - **Early Classification** using **Rule Based Method** and **QBC Method**.
 
 ### Table of Contents:
 
@@ -40,17 +40,17 @@ This project requires **Python** and the following Python libraries installed:
 In a terminal or command window, navigate to the top-level project directory `Multivariate-Time-series-classification/` (that contains this README) and run command in sequence:
 
 ```bash
-python <anyone_file_from_objective_1>
+python anyone_file_from_objective_1.py
 ```
 
 _This may take time, then do_
 ```bash
-python <files_from_objective_2>
+python files_from_objective_2.py
 ```
 
 _either greedy or SI method files only one by one, then do_
 ```bash
-python <anyone_file_from_objective_3>
+python anyone_file_from_objective_3
 ```
 
 This is final early classififcation with earliness and accuracy. 
