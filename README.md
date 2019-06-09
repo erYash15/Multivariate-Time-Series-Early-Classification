@@ -4,7 +4,7 @@
 
 ### Description: 
 
-Project is divided into 3 sub-objectives:
+Project is divided into 3 Sub-Objectives:
 
 Objective 1: Discover the internal Characteristics of MTS (Multivariate Time-Series) data and enhance the interpretability of classification. **Extact Feature Candidate** of each variable.
 
@@ -43,12 +43,12 @@ In a terminal or command window, navigate to the top-level project directory `Mu
 python <anyone_file_from_objective_1>
 ```
 
-This takes time, then
+This may take time, then do
 ```bash
 python <files_from_objective_2>
 ```
 
-either greedy or SI method files only one by one, then
+either greedy or SI method files only one by one, then do
 ```bash
 python <anyone_file_from_objective_3>
 ```
@@ -58,6 +58,7 @@ This is final early classififcation with earliness and accuracy.
 
 
 ### Contributing:
+
 
 
 ### Credits:
