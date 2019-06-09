@@ -50,7 +50,7 @@ python files_from_objective_2.py
 
 _either greedy or SI method files only one by one, then do_
 ```bash
-python anyone_file_from_objective_3
+python anyone_file_from_objective_3.py
 ```
 
 _This is final early classififcation with earliness and accuracy._
@@ -61,11 +61,12 @@ _This is final early classififcation with earliness and accuracy._
 
 
 
+
 ### Credits:
 
 Project is based on the paper "Early classification on multivariate time series". Author Guoliang He, Yong Duan, Rong Peng, Xiaoyuan Jing, Tieyun Qian, Lingling Wang.
 
-- [Early classification on multivariate time series](https://dl.acm.org/citation.cfm?id=2841855)
+[Early classification on multivariate time series](https://dl.acm.org/citation.cfm?id=2841855)
 
 ### License:
 
