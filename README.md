@@ -53,7 +53,7 @@ _either greedy or SI method files only one by one, then do_
 python anyone_file_from_objective_3
 ```
 
-This is final early classififcation with earliness and accuracy. 
+_This is final early classififcation with earliness and accuracy._
 
 
 
