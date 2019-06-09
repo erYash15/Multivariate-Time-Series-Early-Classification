@@ -1,15 +1,15 @@
-#Multivariate-Time-series-classification
+# Multivariate-Time-series-classification
 
-##Project name: Early Classification of Time Series Data
+## Project name: Early Classification of Time Series Data
 
-###Description: 
+### Description: 
 
 Project is divided into 3 sub-objectives:
 Objective 1: Discover the internal Characteristics of MTS (Multivariate Time-Series) data and enhance the interpretability of classification. EXTRACT FEATURE CANDIDATE of each variable.
 OBJECTIVE 2: MINE CORE FEATURES from the extracted features using GREEDY METHOD and SI CLUSTERING. Core feature is any shapelet extremely useful in classification.
 OBJECTIVE 3: EARLY CLASSIFICATION using RULE BASED METHOD and QBC METHOD.
 
-###Table of Contents:
+### Table of Contents:
 
 Files associated with Objective 1:
 
@@ -24,7 +24,7 @@ Files associated with Objective 3:
 
 - [early_classification_MCFEC_QBC.py]
 
-###Pre-requisites and Installation:
+### Pre-requisites and Installation:
 This project requires **Python** and the following Python libraries installed:
 
 - [NumPy](http://www.numpy.org/)
@@ -32,7 +32,7 @@ This project requires **Python** and the following Python libraries installed:
 - [matplotlib](http://matplotlib.org/)
 - [scikit-learn](http://scikit-learn.org/stable/)
 
-###Usage:
+### Usage:
 
 In a terminal or command window, navigate to the top-level project directory `Multivariate-Time-series-classification/` (that contains this README) and run command in sequence:
 
@@ -54,16 +54,16 @@ This is final early classififcation with earliness and accuracy.
 
 
 
-###Contributing:
+### Contributing:
 
 
-###Credits:
+### Credits:
 
 Project is based on the paper "Early classification on multivariate time series". Author Guoliang He, Yong Duan, Rong Peng, Xiaoyuan Jing, Tieyun Qian, Lingling Wang.
 
 - [Early classification on multivariate time series](https://dl.acm.org/citation.cfm?id=2841855)
 
-###License:
+### License:
 
 
 
