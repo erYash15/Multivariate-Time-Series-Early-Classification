@@ -64,9 +64,9 @@ _This is final early classififcation with earliness and accuracy._
 
 ### Credits:
 
-Project is based on the paper "Early classification on multivariate time series". Author Guoliang He, Yong Duan, Rong Peng, Xiaoyuan Jing, Tieyun Qian, Lingling Wang.
+Project is based on the paper "[Early classification on multivariate time series](https://dl.acm.org/citation.cfm?id=2841855)". Author Guoliang He, Yong Duan, Rong Peng, Xiaoyuan Jing, Tieyun Qian, Lingling Wang.
 
-[Early classification on multivariate time series](https://dl.acm.org/citation.cfm?id=2841855)
+
 
 ### License:
 
