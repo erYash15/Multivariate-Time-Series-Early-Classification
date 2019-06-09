@@ -6,11 +6,11 @@
 
 Project is divided into 3 sub-objectives:
 
-Objective 1: Discover the internal Characteristics of MTS (Multivariate Time-Series) data and enhance the interpretability of classification. EXTRACT FEATURE CANDIDATE of each variable.
+Objective 1: Discover the internal Characteristics of MTS (Multivariate Time-Series) data and enhance the interpretability of classification. **Extact Feature Candidate** of each variable.
 
-OBJECTIVE 2: MINE CORE FEATURES from the extracted features using GREEDY METHOD and SI CLUSTERING. Core feature is any shapelet extremely useful in classification.
+OBJECTIVE 2: **Mine Core Features** from the extracted features using **Greedy Method** and **SI Clustering**. Core feature is any shapelet extremely useful in classification.
 
-OBJECTIVE 3: EARLY CLASSIFICATION using RULE BASED METHOD and QBC METHOD.
+OBJECTIVE 3: **Early Classification** using **Rule Based Method** and **QBC Method**.
 
 ### Table of Contents:
 
