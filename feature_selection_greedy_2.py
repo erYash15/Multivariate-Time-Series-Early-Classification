@@ -29,19 +29,19 @@ def loaddatasetMTS(dname):
     trainlabels = data['mts']['trainlabels'][()]
     test = data['mts']['test'][()]
     testlabels = data['mts']['testlabels'][()]
-    var = train[0].shape[0]
+    #var = train[0].shape[0]
     # normalize train data
-    for i in range(len(train)):
-        for v in range(var):
-            train[i]=train[i].astype('float64')
-            if np.std(train[i][v])!=0:
-                train[i][v] = stats.zscore(train[i][v])
+    #for i in range(len(train)):
+    #    for v in range(var):
+    #        train[i]=train[i].astype('float64')
+    #        if np.std(train[i][v])!=0:
+    #            train[i][v] = stats.zscore(train[i][v])
     # normalize test data
-    for i in range(len(test)):
-        for v in range(var):
-            test[i]=test[i].astype('float64')
-            if np.std(test[i][v])!=0:
-                test[i][v]= stats.zscore(test[i][v])
+    #for i in range(len(test)):
+    #    for v in range(var):
+    #        test[i]=test[i].astype('float64')
+    #        if np.std(test[i][v])!=0:
+    #            test[i][v]= stats.zscore(test[i][v])
     return train,trainlabels,test,testlabels
 
 train,trainlabels,test,testlabels = loaddatasetMTS("ECG")
@@ -59,23 +59,7 @@ def min_euclidean(X,Y):
     return(min)
 
 
-
-
-
-
-#'''loading all shapelets, quality,datasets '''
-#with open('features', 'rb') as f:
-#    features = pickle.load(f)
-#with open('output', 'rb') as f:
-#    shapelets = pickle.load(f)
-#with open('train', 'rb') as f:
-#    train = pickle.load(f)
-#with open('trainlabels', 'rb') as f:
-#    trainlabels = pickle.load(f)
-
-shapelets_local = copy.deepcopy(shapelets)
-
-def train_shapelets(shapelet_local,Y):
+def train_shapelets_pred(shapelet_local,Y):
     #print(shapelet_local[0],Y)
     if(len(shapelet_local[0])<len(Y)):
         for i in range((len(Y)-len(shapelet_local[0]))+1):
@@ -99,33 +83,43 @@ with open('features', 'rb') as f:
 
     
 def imp_features(shapelets_local,data,labels,features):
-    data_cpy = copy.deepcopy(data)
-    labels_cpy = copy.deepcopy(labels)
+    
     imp_shapelets = []
+    uniq_lab = set(labels)
+    uniq_var = len(data[0])
+    all_data_variatewise = []
+    for _ in range(uniq_var):
+        all_data_variatewise.append([i for i in range(len(data))])
+    
+    all_shapelets_variatewise = []
+    for _ in range(uniq_var):
+        all_shapelets_variatewise.append([])
+    
     for g in features:
-        print("g no. is",g)
-        flag = 1;counter = 0
-        prev_len = len(data_cpy)
-        while(len(data_cpy)!=0 and flag==1):
-            pred = train_shapelets(shapelets_local[g[1]],data_cpy[counter][shapelets_local[g[1]][5]])
-            if(pred == "NAN" or pred != labels_cpy[counter]):
-                counter = counter + 1
-            else:
-                data_cpy = np.delete(data_cpy,counter)
-                labels_cpy = np.delete(labels_cpy,counter)
-                print("length of data",len(data_cpy),"length of labels",len(labels_cpy))
-            if(counter>=len(data_cpy)):
-                print("counter is",counter)
-                flag = 0
-        curr_len = len(data_cpy)
-        print("diff", prev_len - curr_len)
-        if(prev_len>curr_len):
-            print("selected g is ", g[1])
-            imp_shapelets.append(shapelets_local[g[1]])
+        all_shapelets_variatewise[shapelets_local[g[1]][5]].append(g[1])
+
+    
+    for variate in range(len(all_shapelets_variatewise)):
+        for shapelets in all_shapelets_variatewise[variate]:
+            #print(shapelets)
+            prev_len = len(all_data_variatewise[variate])
+            temp = []
+            for i in all_data_variatewise[variate]:
+                print(shapelets,i,variate)
+                pred = train_shapelets_pred(shapelets_local[shapelets],data[i][variate]) 
+                if(pred == labels[i]):
+                    temp.append(i)
+            for j in temp:
+               all_data_variatewise[variate].remove(j)
+            curr_len = len(all_data_variatewise[variate])
+            if(prev_len>curr_len):
+                imp_shapelets.append(shapelets_local[shapelets])
+                print(imp_shapelets)
+   
     return imp_shapelets
+    
 	
-	
-core_feature = imp_features(shapelets_local,train,trainlabels,features)
+core_feature = imp_features(shapelets,train,trainlabels,features)
 print(len(core_feature))
 with open('core_features', 'wb') as f:
     pickle.dump(core_feature,f)
