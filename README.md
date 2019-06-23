@@ -1,4 +1,4 @@
-# Multivariate-Time-series-classification
+# Multivariate-Time-Series-Classification
 
 ## Project name: Early Classification of Time Series Data
 
