@@ -26,7 +26,6 @@ Files associated with Objective 2:
 Files associated with Objective 3:
 
 - [early_classification_MCFEC_QBC.py](https://github.com/erYash15/Multivariate-Time-series-early-classification/blob/master/early_classification_MCFEC_QBC.py)
-
 - [early_classification_MCFEC_Rule_Based.py](https://github.com/erYash15/Multivariate-Time-series-early-classification/blob/master/early_classification_MCFEC_Rule_Based.py)
 
 
