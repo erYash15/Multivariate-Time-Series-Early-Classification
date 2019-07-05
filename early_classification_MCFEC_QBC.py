@@ -125,7 +125,10 @@ count = 0
 for p in pred_labels:
     print(p)
     if(max_feq(p)==0):
-        pred_labels_test.append(int(random.randint(1,len(set(trainlabels)))))  
+        try:
+            pred_labels_test.append(int(random.choice(p)))  
+        except:
+            pred_labels_test.append(int(random.randint(1,len(set(trainlabels)))))
     else:
         pred_labels_test.append(max_feq(p))   
         #if(early[count][0][0]>early[count][1][0]):
