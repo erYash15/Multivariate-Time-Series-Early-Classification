@@ -44,33 +44,28 @@ def loaddatasetMTS(dname):
     #            test[i][v]= stats.zscore(test[i][v])
     return train,trainlabels,test,testlabels
 
-train,trainlabels,test,testlabels = loaddatasetMTS("ECG")
-
-###MODULE-1###
-'''reading all shapelets from data'''
-with open('output', 'rb') as f:
-    shapelets = pickle.load(f) 
-len(shapelets)
-
-shapelets_local = copy.deepcopy(shapelets)
 
 
 ###MODULE-2###
 '''useful function from selction'''
 def MIL(shapelet_local,X):
+    #shapelet_local[0] = shapelet
+    #shapelet_local[2] is threshold
     for i in range(len(X)-len(shapelet_local[0])+1):
         dist=np.linalg.norm(np.array(X[i:i+len(shapelet_local[0])]-np.array(shapelet_local[0])))
         if(dist<shapelet_local[2]):
             return i+len(shapelet_local[0])
-    return len(X)
+    return "NAN"
 #returns the MIL distance if fouund else total length
 	
 def earli_cal(shapelet_local,data):
     earliness = 0
     count = 0
     for s in range(data.shape[0]):
-        early = MIL(shapelet_local,data[s][int(shapelet_local[5])])/len(data[s][int(shapelet_local[5])])
-        if(early<1):
+        #shapelet_local[5] is variate
+        mil_length = MIL(shapelet_local,data[s][int(shapelet_local[5])])
+        if(mil_length != "NAN"):
+            early = mil_length/len(data[s][int(shapelet_local[5])])
             earliness += (1 - early)
             count += 1
     earliness = earliness/count
@@ -80,29 +75,36 @@ def earli_cal(shapelet_local,data):
 ###MODULE-3###
 '''fuction of finding quality'''
 def feature_selection(shapelets_local,data,labels,w0=1,w1=1,w2=1):
-    GEFM_lst = [[y for x in range(1)] for y in range(len(shapelets_local))]
- #   imp_shapelets = []
+    #shapelets_local is list of list of shapelets with information - shapelets,class,threshold,prec,recall,variate,length,sample
+    
+    GEFM_lst = [[y for x in range(2)] for y in range(len(shapelets_local))]
     counter = 0
     for shapelet_local in shapelets_local:#for each shapelet in all shaplets
         print(counter)
         earliness = earli_cal(shapelet_local,data)
-        #print(earliness,shapelet[3],shapelet[4])
-        #print(earliness)
+        #shapelet_local[3] is precision
+        #shapelet_local[4] is recall
         if(earliness == 0 or shapelet_local[3]==0 or shapelet_local[4]==0):
             GEFM=0
         else:
-            #GEFM=2/((1/shapelet_local[3])+(1/shapelet_local[4]))
             GEFM=1/((w0/earliness)+(w1/shapelet_local[3])+(w2/shapelet_local[4]))
-        GEFM_lst[counter].insert(0,GEFM)
+        GEFM_lst[counter][0] = GEFM
         counter = counter + 1
     #print(shapelets_local)
-    
     GEFM_lst.sort(reverse= True)
     print(GEFM_lst)
     return GEFM_lst
-	
-features = feature_selection(shapelets_local,train,trainlabels)
 
-'''saving all shapelets quality'''
-with open('features', 'wb') as f:
-    pickle.dump(features,f)
+
+# Main Code Start
+if __name__ == '__main__':
+    train,trainlabels,test,testlabels = loaddatasetMTS("ECG")
+    ###MODULE-1###
+    '''reading all shapelets from data'''
+    with open('output_fss_sts', 'rb') as f:
+        shapelets = pickle.load(f)
+    shapelets_local = copy.deepcopy(shapelets)	
+    features = feature_selection(shapelets_local,train,trainlabels)
+    '''saving all shapelets quality'''
+    with open('features_greedy_fss_sts', 'wb') as f:
+        pickle.dump(features,f)
