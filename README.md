@@ -22,6 +22,7 @@ Files associated with Objective 2:
 
 - [feature_selection_greedy_1.py](https://github.com/erYash15/Multivariate-Time-series-early-classification/blob/master/feature_selection_greedy_1.py)
 - [feature_selection_greedy_2.py](https://github.com/erYash15/Multivariate-Time-series-early-classification/blob/master/feature_selection_greedy_2.py)
+- [SI_feature_selection](https://github.com/erYash15/Multivariate-Time-Series-Early-Classification/blob/master/SI_feature_selection.py)
 
 Files associated with Objective 3:
 
