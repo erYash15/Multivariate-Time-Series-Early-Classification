@@ -73,9 +73,10 @@ Project is based on the paper "[Early classification on multivariate time series
 
 ### License:
 
-FREE .
 To cite either a computer program or piece of source code you will need the following information:
 
 Yash Gupta
+
 Early Classification of Time Series Data
+
 https://github.com/erYash15/Multivariate-Time-Series-Early-Classification
