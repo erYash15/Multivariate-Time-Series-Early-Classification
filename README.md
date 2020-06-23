@@ -6,7 +6,7 @@
 
 Project is divided into 3 Sub-Objectives:
 
-_Objective 1_ - Discover the internal Characteristics of MTS (Multivariate Time-Series) data and enhance the interpretability of classification. **Extact Feature Candidate** of each variable.
+_Objective 1_ - Discover the internal Characteristics of MTS (Multivariate Time-Series) data and enhance the interpretability of classification. **Extract Feature Candidate** of each variable.
 
 _Objective 2_ - **Mine Core Features** from the extracted features using **Greedy Method** and **SI Clustering**. Core feature is any shapelet extremely useful in classification.
 
@@ -73,5 +73,9 @@ Project is based on the paper "[Early classification on multivariate time series
 
 ### License:
 
+FREE .
+To cite either a computer program or piece of source code you will need the following information:
 
-
+Yash Gupta
+Early Classification of Time Series Data
+https://github.com/erYash15/Multivariate-Time-Series-Early-Classification
