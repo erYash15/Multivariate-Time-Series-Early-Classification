@@ -58,13 +58,6 @@ python anyone_file_from_objective_3.py
 
 _This is final early classififcation with earliness and accuracy._
 
-
-
-### Contributing:
-
-
-
-
 ### Credits:
 
 Project is based on the paper "[Early classification on multivariate time series](https://dl.acm.org/citation.cfm?id=2841855)". Author Guoliang He, Yong Duan, Rong Peng, Xiaoyuan Jing, Tieyun Qian, Lingling Wang.
